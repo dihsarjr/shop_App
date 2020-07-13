@@ -9,7 +9,7 @@ class ProductsOverView extends StatelessWidget {
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
-      'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
     ),
     ProductModel(
       id: 'p2',
@@ -17,7 +17,7 @@ class ProductsOverView extends StatelessWidget {
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
-      'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
     ),
     ProductModel(
       id: 'p3',
@@ -25,7 +25,7 @@ class ProductsOverView extends StatelessWidget {
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
-      'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
     ),
     ProductModel(
       id: 'p4',
@@ -33,11 +33,26 @@ class ProductsOverView extends StatelessWidget {
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
-      'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
     ),
   ];
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        itemBuilder: (context, index) {
+          return Container(
+            child: Text('data'),
+          );
+        },
+        itemCount: loadedProducts.length,
+      ),
+    );
   }
 }
