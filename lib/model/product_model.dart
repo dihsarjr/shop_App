@@ -5,5 +5,11 @@ class ProductModel {
   final double price;
   final String imageUrl;
   bool favorite;
-  ProductModel({this.id,this.title,this.description,this.price,this.imageUrl,this.favorite});
+  ProductModel(
+      {this.id,
+      this.title,
+      this.description,
+      this.price,
+      this.imageUrl,
+      this.favorite});
 }
