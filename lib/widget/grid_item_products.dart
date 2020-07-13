@@ -8,9 +8,14 @@ class GridProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridTile(
-        child: Image.network(
-      image,
-      fit: BoxFit.cover,
-    ));
+      child: Image.network(
+        image,
+        fit: BoxFit.cover,
+      ),
+      footer: GridTileBar(
+        title: Text(title),
+        backgroundColor: Colors.black87,
+      ),
+    );
   }
 }
