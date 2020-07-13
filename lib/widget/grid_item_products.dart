@@ -13,8 +13,13 @@ class GridProducts extends StatelessWidget {
         fit: BoxFit.cover,
       ),
       footer: GridTileBar(
-        title: Text(title),
-        backgroundColor: Colors.black87,
+        leading: IconButton(icon: Icon(Icons.favorite), onPressed: () {}),
+        title: Text(
+          title,
+          textAlign: TextAlign.center,
+        ),
+        trailing: IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {}),
+        backgroundColor: Colors.black54,
       ),
     );
   }
