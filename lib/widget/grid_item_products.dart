@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/detail_page.dart';
 
 class GridProducts extends StatelessWidget {
   String id;
@@ -11,7 +12,10 @@ class GridProducts extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
         child: GestureDetector(
-          onTap: (){},
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => DetailsPage()));
+          },
           child: Image.network(
             image,
             fit: BoxFit.cover,
