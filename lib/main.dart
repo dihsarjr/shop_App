@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/model/product_model.dart';
+import 'package:shop_app/provider/provider_data.dart';
 import 'package:shop_app/screens/products_over_view.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,14 +11,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        accentColor: Colors.deepOrangeAccent,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ChangeNotifierProvider(
+      create: (ctx) => ProductsData(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.purple,
+          accentColor: Colors.deepOrangeAccent,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: ProductsOverView(),
       ),
-      home: ProductsOverView(),
     );
   }
 }
