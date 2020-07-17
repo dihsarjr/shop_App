@@ -13,8 +13,10 @@ class GridProducts extends StatelessWidget {
       child: GridTile(
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (ctx) => DetailsPage()));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (ctx) => DetailsPage(
+                      title: title,
+                    )));
           },
           child: Image.network(
             image,

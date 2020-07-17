@@ -47,7 +47,7 @@ class ProductsOverView extends StatelessWidget {
         padding: EdgeInsets.all(15),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 3 / 2,
+          childAspectRatio: 1 / 1,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),
