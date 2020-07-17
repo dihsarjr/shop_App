@@ -11,6 +11,7 @@ class ProductsOverView extends StatelessWidget {
       price: 29.99,
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+      favorite: false,
     ),
     ProductModel(
       id: 'p2',
@@ -19,6 +20,7 @@ class ProductsOverView extends StatelessWidget {
       price: 29.99,
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+      favorite: false,
     ),
     ProductModel(
       id: 'p3',
@@ -27,6 +29,7 @@ class ProductsOverView extends StatelessWidget {
       price: 29.99,
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+      favorite: false,
     ),
     ProductModel(
       id: 'p4',
@@ -35,6 +38,7 @@ class ProductsOverView extends StatelessWidget {
       price: 29.99,
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+      favorite: false,
     ),
   ];
   @override
@@ -52,8 +56,11 @@ class ProductsOverView extends StatelessWidget {
           mainAxisSpacing: 10,
         ),
         itemBuilder: (context, index) {
-          return GridProducts(loadedProducts[index].id,
-              loadedProducts[index].title, loadedProducts[index].imageUrl);
+          return GridProducts(
+              loadedProducts[index].id,
+              loadedProducts[index].title,
+              loadedProducts[index].imageUrl,
+              loadedProducts[index].favorite);
         },
         itemCount: loadedProducts.length,
       ),

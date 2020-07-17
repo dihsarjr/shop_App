@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/detail_page.dart';
 
-class GridProducts extends StatelessWidget {
+class GridProducts extends StatefulWidget {
   String id;
   String title;
   String image;
-  GridProducts(this.id, this.title, this.image);
+  bool favorite;
+  GridProducts(this.id, this.title, this.image, this.favorite);
+
+  @override
+  _GridProductsState createState() => _GridProductsState();
+}
+
+class _GridProductsState extends State<GridProducts> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -15,18 +22,32 @@ class GridProducts extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (ctx) => DetailsPage(
-                      title: title,
+                      title: widget.title,
                     )));
           },
           child: Image.network(
-            image,
+            widget.image,
             fit: BoxFit.cover,
           ),
         ),
         footer: GridTileBar(
-          leading: IconButton(icon: Icon(Icons.favorite), onPressed: () {}),
+          leading: widget.favorite == false
+              ? IconButton(
+                  icon: Icon(Icons.favorite_border),
+                  onPressed: () {
+                    setState(() {
+                      widget.favorite = true;
+                    });
+                  })
+              : IconButton(
+                  icon: Icon(Icons.favorite),
+                  onPressed: () {
+                    setState(() {
+                      widget.favorite = false;
+                    });
+                  }),
           title: Text(
-            title,
+            widget.title,
             textAlign: TextAlign.center,
           ),
           trailing:
