@@ -31,7 +31,7 @@ class _GridProductsState extends State<GridProducts> {
           ),
         ),
         footer: GridTileBar(
-          leading: widget.favorite == false
+          leading: widget.favorite == null
               ? IconButton(
                   icon: Icon(Icons.favorite_border),
                   onPressed: () {
@@ -43,7 +43,7 @@ class _GridProductsState extends State<GridProducts> {
                   icon: Icon(Icons.favorite),
                   onPressed: () {
                     setState(() {
-                      widget.favorite = false;
+                      widget.favorite = null;
                     });
                   }),
           title: Text(

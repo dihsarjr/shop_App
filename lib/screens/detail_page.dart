@@ -9,6 +9,7 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 //    final productId = ModalRoute.of(context).settings.arguments as String;
+    //findById() also work well
     final prod = Provider.of<ProductsData>(context)
         .items
         .firstWhere((element) => element.id == id);
