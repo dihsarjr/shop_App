@@ -1,14 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/provider/provider_data.dart';
 
 class DetailsPage extends StatelessWidget {
-  String title;
-  DetailsPage({this.title});
+  String id;
+  DetailsPage({this.id});
   @override
   Widget build(BuildContext context) {
+//    final productId = ModalRoute.of(context).settings.arguments as String;
+    final prod = Provider.of<ProductsData>(context)
+        .items
+        .firstWhere((element) => element.id == id);
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(prod.title),
       ),
       body: Container(),
     );

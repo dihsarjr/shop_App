@@ -22,7 +22,7 @@ class _GridProductsState extends State<GridProducts> {
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (ctx) => DetailsPage(
-                      title: widget.title,
+                      id: widget.id,
                     )));
           },
           child: Image.network(

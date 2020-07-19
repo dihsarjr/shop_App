@@ -13,7 +13,7 @@ class ProductsData with ChangeNotifier {
     ),
     ProductModel(
       id: 'p2',
-      title: 'Red Shirt',
+      title: 'blue Shirt',
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
@@ -21,7 +21,7 @@ class ProductsData with ChangeNotifier {
     ),
     ProductModel(
       id: 'p3',
-      title: 'Red Shirt',
+      title: 'black Shirt',
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
@@ -29,7 +29,7 @@ class ProductsData with ChangeNotifier {
     ),
     ProductModel(
       id: 'p4',
-      title: 'Red Shirt',
+      title: 'yellow Shirt',
       description: 'A red shirt - it is pretty red!',
       price: 29.99,
       imageUrl:
