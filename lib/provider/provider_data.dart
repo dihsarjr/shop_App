@@ -37,8 +37,21 @@ class ProductsData with ChangeNotifier {
     ),
   ];
 
+  var showFavorite = false;
+
   List<ProductModel> get items {
+    if (showFavorite) {
+      return _items.where((element) => element.favorite).toList();
+    }
     return [..._items];
+  }
+
+  void showFavoriteOnly() {
+    showFavorite = true;
+  }
+
+  void showAll() {
+    showFavorite = false;
   }
 
   void addProducts() {
